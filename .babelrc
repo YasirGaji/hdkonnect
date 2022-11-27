@@ -1,0 +1,31 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
+      }
+    ],
+
+    [
+      "babel-plugin-twin",
+      {
+        // "preset": "styled-components",
+        // "dataTwProp": true,
+        "debug": false
+        // "debugPlugins": true,
+        // "debugProp": true,
+        // "debugPropVerbose": true,
+        // "debugPluginsVerbose": true,
+        // "debugVerbose": true,
+        // "styled": "styled-components",
+        // "cssPropOptimization": true
+      }
+    ],
+
+    "babel-plugin-macros"
+  ]
+}
