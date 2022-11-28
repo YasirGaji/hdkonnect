@@ -2,10 +2,17 @@ import React from 'react'
 import Image from 'next/image'
 import tw from 'twin.macro'
 import Link from 'next/link'
+import { 
+  SearchIcon,
+  ShoppingBagIcon,
+  UserIcon,
+} from '@heroicons/react/outline'
 
 function Header() {
+  const session = false;
+
   return (
-    <header>
+    <header className='headerStyle'>
       <OuterDiv>
         <Link href="/">
           <StyledDiv>
@@ -20,6 +27,37 @@ function Header() {
         <a className='headerLink'>Support</a>
         <a className='headerLink'>Business</a>
       </NavBar>
+
+      <Icons>
+        <SearchIcon className='headerIcon' />
+        <Link href={'/checkout'}>
+          <CountDiv>
+            <CountSpan>3</CountSpan>
+          </CountDiv>
+          <ShoppingBagIcon className='headerIcon' />
+        </Link>
+        
+        {session ? (
+          <Image
+            src = {
+            //session.user?.image ||
+              "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" 
+            }
+            alt=""
+            className="cursor-pointer rounded-full"
+            width={34}
+            height={34}
+           // onClick={() => signOut()}
+          />
+        ) : (
+          <UserIcon 
+            className='headerIcon' 
+            // onClick={() => signIn()} 
+          />
+        )}
+
+        
+      </Icons>
     </header>
   )
 }
@@ -50,6 +88,35 @@ const NavBar = tw.div`
   justify-center
   space-x-8
   md:flex
+`;
+
+const Icons = tw.div`
+  flex
+  items-center
+  justify-center
+  gap-x-4
+  md:w-1/5
+`;
+
+const CountDiv = tw.div`
+  relative 
+  cursor-pointer
+`;
+
+const CountSpan = tw.span`
+  absolute
+  -right-1
+  -top-1
+  z-50
+  flex
+  h-4
+  w-4
+  items-center
+  justify-center
+  rounded-full
+  bg-gradient-to-r
+  from-blue-500
+  to-red-500
 `;
 
 //https://images.unsplash.com/photo-1615655406736-b37c4fabf923?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80 
