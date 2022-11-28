@@ -6,7 +6,7 @@ This is a gadget ecommerce website built on the Next JS technology and [Tailwind
 
  [Styled Component](https://styled-components.com/) and [Twin Macro](https://github.com/ben-rogerson/twin.macro/blob/master/docs/prop-styling-guide.md) was introduced for the styling of the components. Responsible styling.
 
-[![View Project](https://www.netlify.com/button)](#)
+[![View Project](https://www.vercel.com/button)](#)
 
 <!-- ## How to use
 
