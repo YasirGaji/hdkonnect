@@ -117,6 +117,9 @@ const CountSpan = tw.span`
   bg-gradient-to-r
   from-blue-500
   to-red-500
+  text-[10px]
+  font-bold
+  text-white
 `;
 
 //https://images.unsplash.com/photo-1615655406736-b37c4fabf923?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80 
