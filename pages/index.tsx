@@ -20,9 +20,12 @@ const Home: NextPage = () => {
       </Main>
 
       <Section1>
-        <H1tag>
-          New Products
-        </H1tag>
+        <H1Div>
+          <H1tag>
+            New Products
+          </H1tag>
+        </H1Div>
+        
       </Section1>
     </div> 
   )
@@ -52,4 +55,9 @@ const H1tag = tw.h1`
   tracking-wide
   text-white
   md:text-5xl
+`;
+
+const H1Div = tw.div`
+  space-y-10
+  py-16
 `;
