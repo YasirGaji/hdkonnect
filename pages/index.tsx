@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../Components/Header'
 import Landing from '../Components/Landing'
+import tw from 'twin.macro'
 
 const Home: NextPage = () => {
   return (
@@ -14,11 +15,41 @@ const Home: NextPage = () => {
 
       <Header />
 
-      <main className='relative h-[200vh] bg-[#F5F7F9]'>
+      <Main>
         <Landing />
-      </main>
+      </Main>
+
+      <Section1>
+        <H1tag>
+          New Products
+        </H1tag>
+      </Section1>
     </div> 
   )
 }
 
-export default Home
+export default Home;
+
+
+const Main = tw.main`
+  relative 
+  h-[200vh] 
+  bg-[#F5F7F9]
+`;
+
+const Section1 = tw.section`
+  relative
+  z-40
+  -mt-[100vh]
+  min-h-screen
+  bg-[#1b1b1b]
+`;
+
+const H1tag = tw.h1`
+  text-center
+  text-4xl
+  font-medium
+  tracking-wide
+  text-white
+  md:text-5xl
+`;
