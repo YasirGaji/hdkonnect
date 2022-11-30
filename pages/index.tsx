@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Header from '../Components/Header'
 import Landing from '../Components/Landing'
 import tw from 'twin.macro'
+import ProductTab from '../Components/ProductTab'
 
 const Home: NextPage = () => {
   return (
@@ -24,6 +25,8 @@ const Home: NextPage = () => {
           <H1tag>
             New Products
           </H1tag>
+
+          <ProductTab />
         </H1Div>
         
       </Section1>

@@ -5,8 +5,9 @@ This is a gadget ecommerce website built on the Next JS technology and [Tailwind
 ## Not to forget
 
  [Styled Component](https://styled-components.com/) and [Twin Macro](https://github.com/ben-rogerson/twin.macro/blob/master/docs/prop-styling-guide.md) was introduced for the styling of the components. Responsible styling.
+ Also, used [Headless UI](https://headlessui.dev/) for the products sections and [Hero Icons](https://heroicons.com/) for the icons.
 
-[![View Project](https://www.vercel.com/button)](#)
+[View Project](https://www.vercel.com/button)(#)
 
 <!-- ## How to use
 
