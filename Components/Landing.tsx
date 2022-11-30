@@ -24,11 +24,11 @@ function Landing() {
           {/* <Button title="Buy Now" /> */}
           <a className='link'>Learn more</a>
         </div>
-
-        <ImageDiv>
-          <Image src="/iphone.png" layout='fill' objectFit='contain' alt={'landing image'} />
-        </ImageDiv>
       </TextDiv>
+
+      <ImageDiv>
+          <Image src="/bg.jpg" layout='fill' objectFit='contain' alt={'landing image'} />
+      </ImageDiv>
     </section>
   )
 }
@@ -69,3 +69,4 @@ const ImageDiv = tw.div`
   lg:h-[650px]
   lg:w-[600px]
 `;
+
