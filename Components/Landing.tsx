@@ -1,6 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 import Image from 'next/image';
+import Button from './Button';
 
 function Landing() {
   return (
@@ -8,7 +9,7 @@ function Landing() {
       <TextDiv>
         <H1>
           <PoweredSpan className='themeGrad'>
-            HDKonnects
+            HDKonnect
           </PoweredSpan>
 
           <WordSpan>
@@ -16,12 +17,12 @@ function Landing() {
           </WordSpan>
 
           <WordSpan>
-            We get am
+            We Get Am
           </WordSpan>
         </H1>
 
-        <div>
-          {/* <Button title="Buy Now" /> */}
+        <div className='space-x-8'>
+          <Button title="Shop Now" />
           <a className='link'>Learn more</a>
         </div>
       </TextDiv>
