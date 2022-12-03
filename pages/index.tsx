@@ -1,14 +1,21 @@
-import type { NextPage, GetServerSideProps } from 'next'
+import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../Components/Header'
 import Landing from '../Components/Landing'
 import tw from 'twin.macro'
 import ProductTab from '../Components/ProductTab'
+import { fetchCategories } from '../utils/fetchCategories'
+
+
+interface ProductProps {
+  categories?: Category[];
+}
 
 // FRONTEND CODE
 
-const Home: NextPage = () => {
+const Home = ({ categories }: ProductProps) => {
+  console.log(categories);
   return (
     <div className="">
       <Head>
@@ -28,7 +35,7 @@ const Home: NextPage = () => {
             New Products
           </H1tag>
 
-          <ProductTab />
+          <ProductTab />  
         </H1Div>
         
       </Section1>
@@ -38,7 +45,16 @@ const Home: NextPage = () => {
 
 export default Home;
 
+// BACKEND CODE
+export const getServerSideProps: GetServerSideProps<ProductProps> = async () => {
+  const categories = await fetchCategories()
 
+  return {
+    props: {
+      categories,
+    },
+  }
+}
 
 
 
