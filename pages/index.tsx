@@ -9,7 +9,7 @@ import { fetchCategories } from '../utils/fetchCategories'
 
 
 interface ProductProps {
-  categories?: Category[];
+  categories: Category[];
 }
 
 // FRONTEND CODE
@@ -35,7 +35,7 @@ const Home = ({ categories }: ProductProps) => {
             New Products
           </H1tag>
 
-          <ProductTab />  
+          <ProductTab categories={categories} />  
         </H1Div>
         
       </Section1>

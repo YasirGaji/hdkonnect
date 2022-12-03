@@ -58,19 +58,19 @@
     @apply relative mr-2 h-5 w-5 flex-shrink-0 text-white
   }
 
-  /* .tabStyle1 {
-    @apply whitespace-nowrap rouded-t-lg py-3 px-5 text-sm font-light outline-none md:py-4 md:px-6 md:text-base
+  .tabStyle1 {
+    @apply whitespace-nowrap py-3 px-5 text-sm font-light outline-none md:py-4 md:px-6 md:text-base
   }
 
   .tabStyle2 {
-    @apply borderGradient bg-[#35383c] text-white
+    @apply bg-[#35383c] text-white
   }
 
   .tabStyle3 {
-    @apply borderGradient bg-[#35383c] text-[#747474]
+    @apply bg-[#35383c] text-[#747474]
   }
 
   .tabPanels {
     @apply mx-auto max-w-fit pt-10 pb-24 sm:px-4
-  } */
+  }
 }
