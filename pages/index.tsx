@@ -6,16 +6,18 @@ import Landing from '../Components/Landing'
 import tw from 'twin.macro'
 import ProductTab from '../Components/ProductTab'
 import { fetchCategories } from '../utils/fetchCategories'
+import { fetchProducts } from '../utils/fetchProducts'
 
 
 interface ProductProps {
   categories: Category[];
+  products: Product[];
 }
 
 // FRONTEND CODE
 
-const Home = ({ categories }: ProductProps) => {
-  console.log(categories);
+const Home = ({ categories, products }: ProductProps) => {
+  console.log(products);
   return (
     <div className="">
       <Head>
@@ -35,7 +37,7 @@ const Home = ({ categories }: ProductProps) => {
             New Products
           </H1tag>
 
-          <ProductTab categories={categories} />  
+          <ProductTab categories={categories} products={[]} />  
         </H1Div>
         
       </Section1>
@@ -47,11 +49,13 @@ export default Home;
 
 // BACKEND CODE
 export const getServerSideProps: GetServerSideProps<ProductProps> = async () => {
-  const categories = await fetchCategories()
+  const categories = await fetchCategories();
+  const products = await fetchProducts()
 
   return {
     props: {
       categories,
+      products,
     },
   }
 }

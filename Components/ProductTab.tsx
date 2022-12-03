@@ -1,10 +1,9 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
-import { fetchCategories } from '../utils/fetchCategories';
-import { GetServerSideProps } from 'next';
 
 interface ProductProps {
   categories: Category[];
+  products: Product[];
 }
 
 const ProductTab = ({ categories }: ProductProps) => {
