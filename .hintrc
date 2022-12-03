@@ -3,6 +3,8 @@
     "development"
   ],
   "hints": {
-    "compat-api/css": "off"
+    "compat-api/css": "off",
+    "typescript-config/strict": "off",
+    "typescript-config/consistent-casing": "off"
   }
 }

@@ -58,6 +58,13 @@
     @apply relative mr-2 h-5 w-5 flex-shrink-0 text-white
   }
 
+  .borderGradient {
+    text-align: center;
+    padding-bottom: 5px;
+    background-size: 100% 2px;
+    background: linear-gradient(to right, #ec4899, #8b5cf6) left bottom none;
+  }
+
   .tabStyle1 {
     @apply whitespace-nowrap py-3 px-5 text-sm font-light outline-none md:py-4 md:px-6 md:text-base
   }
@@ -67,7 +74,7 @@
   }
 
   .tabStyle3 {
-    @apply bg-[#35383c] text-[#747474]
+    @apply border-b-2 border-[#35383c] text-[#747474]
   }
 
   .tabPanels {

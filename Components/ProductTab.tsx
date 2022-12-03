@@ -20,7 +20,7 @@ const ProductTab = ({ categories }: ProductProps) => {
             className={({ selected }) => `tabStyle1 rouded-t-lg ${
               selected
                 ? 'borderGradient tabStyle2'
-                : 'borderGradient tabStyle3'
+                : 'tabStyle3'
             }`}
           >
             {category.title}
