@@ -1,5 +1,11 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
+import { fetchCategories } from '../utils/fetchCategories';
+import { GetServerSideProps } from 'next';
+
+interface Props {
+  categories: Category[];
+}
 
 function ProductTab() {
   return (
@@ -32,4 +38,16 @@ function ProductTab() {
   )
 }
 
-export default ProductTab
+export default ProductTab;
+
+// BACKEND CODE
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
+  const categories = await fetchCategories()
+
+  return {
+    props: {
+      categories,
+    },
+  }
+}

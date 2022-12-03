@@ -28,7 +28,7 @@ const Home: NextPage = () => {
             New Products
           </H1tag>
 
-          {/* <ProductTab /> */}
+          <ProductTab />
         </H1Div>
         
       </Section1>
@@ -39,15 +39,7 @@ const Home: NextPage = () => {
 export default Home;
 
 
-// BACKEND CODE
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  // const categories = await fetchCategories()
-
-  return {
-    props: {},
-  }
-}
 
 
 // STYLED COMPONENTS
