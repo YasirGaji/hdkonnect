@@ -80,4 +80,8 @@
   .tabPanels {
     @apply mx-auto max-w-fit pt-10 pb-24 sm:px-4
   }
+
+  .flex-shrink-0 {
+    flex-shrink: 0;
+  }
 }
