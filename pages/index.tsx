@@ -37,7 +37,7 @@ const Home = ({ categories, products }: ProductProps) => {
             New Products
           </H1tag>
 
-          <ProductTab categories={categories} products={[]} />  
+          <ProductTab categories={categories} products={products} />  
         </H1Div>
         
       </Section1>

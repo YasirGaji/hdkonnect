@@ -1,13 +1,23 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
+import Product from './Product'
 
 interface ProductProps {
   categories: Category[];
   products: Product[];
 }
 
-const ProductTab = ({ categories }: ProductProps) => {
+const ProductTab = ({ categories, products }: ProductProps) => {
   console.log(categories);
+
+  const showProducts = (category: number) => {
+    return products
+      .filter((product) => product.category._ref === categories[category]._id)
+      .map((product) => (
+      <Product product={product} key={product._id} />
+    )) // this function filters the products by category
+  }
+
   return (
     <div>
     <Tab.Group>
@@ -26,14 +36,13 @@ const ProductTab = ({ categories }: ProductProps) => {
           </Tab>
         ))}
       </Tab.List>
-      {/* <Tab.Panels className="tabPanels">
+      <Tab.Panels className="tabPanels">
         <Tab.Panel className="tabPanel">{showProducts(0)}</Tab.Panel>
         <Tab.Panel className="tabPanel">{showProducts(1)}</Tab.Panel>
         <Tab.Panel className="tabPanel">{showProducts(2)}</Tab.Panel>
         <Tab.Panel className="tabPanel">{showProducts(3)}</Tab.Panel>
-      </Tab.Panels> */}
+      </Tab.Panels>
     </Tab.Group>
-      Tabs
     </div>
   )
 }
