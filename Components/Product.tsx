@@ -8,7 +8,13 @@ interface Props {
   product: Product;
 }
 
+
+
 function Product({product} : Props) {
+  const addItemToCart = () => {
+  
+  };
+
   return (
     <FirstDiv>
       <InnerDiv>
@@ -23,10 +29,10 @@ function Product({product} : Props) {
       <InnerDiv2>
         <SubDiv>
           <p>{product.title}</p>
-          <p>{product.price}</p>
+          <p>₦ {product.price}</p>
         </SubDiv>
 
-        <IconDiv className='flex-shrink-0'>
+        <IconDiv className='flex-shrink-0' onClick={addItemToCart}>
           <ShoppingCartIcon className='h-8 w-8 text-white' />
         </IconDiv>
       </InnerDiv2>
