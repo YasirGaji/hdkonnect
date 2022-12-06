@@ -3,6 +3,9 @@ import Image from 'next/image'
 import { urlFor } from '../sanity';
 import tw from 'twin.macro'
 import { ShoppingCartIcon } from '@heroicons/react/outline';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/cartSlice';
+import { toast } from 'react-hot-toast'
 
 interface Props {
   product: Product;
@@ -11,8 +14,14 @@ interface Props {
 
 
 function Product({product} : Props) {
+  const dispatch = useDispatch();
+
   const addItemToCart = () => {
-  
+    dispatch(addToCart(product));
+
+    toast.success(`${product.title} added to cart`, {
+      position: 'top-center',
+    });
   };
 
   return (
