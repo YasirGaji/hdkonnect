@@ -37,9 +37,12 @@ function Header() {
         <SearchIcon className='headerIcon' />
         <Link href={'/checkout'}>
           <CountDiv>
-            <CountSpan>
-              {items.length}
-            </CountSpan>
+            { items.length > 0 && (
+              <CountSpan>
+                {items.length}
+              </CountSpan>
+            )}
+            
           </CountDiv>
           <ShoppingBagIcon className='headerIcon' />
         </Link>
