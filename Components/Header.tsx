@@ -7,9 +7,14 @@ import {
   ShoppingBagIcon,
   UserIcon,
 } from '@heroicons/react/outline'
+import { useSelector } from 'react-redux';
+import { selectCartItems } from '../redux/cartSlice'
+
+
 
 function Header() {
   const session = false;
+  const items = useSelector(selectCartItems)
 
   return (
     <header className='headerStyle'>
@@ -32,7 +37,9 @@ function Header() {
         <SearchIcon className='headerIcon' />
         <Link href={'/checkout'}>
           <CountDiv>
-            <CountSpan>3</CountSpan>
+            <CountSpan>
+              {items.length}
+            </CountSpan>
           </CountDiv>
           <ShoppingBagIcon className='headerIcon' />
         </Link>

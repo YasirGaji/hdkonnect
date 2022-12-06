@@ -1,4 +1,4 @@
-import type { GetServerSideProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../Components/Header'
@@ -7,6 +7,7 @@ import tw from 'twin.macro'
 import ProductTab from '../Components/ProductTab'
 import { fetchCategories } from '../utils/fetchCategories'
 import { fetchProducts } from '../utils/fetchProducts'
+import Cart from '../Components/Cart'
 
 
 interface ProductProps {
@@ -26,6 +27,8 @@ const Home = ({ categories, products }: ProductProps) => {
       </Head>
 
       <Header />
+
+      <Cart />
 
       <Main>
         <Landing />
