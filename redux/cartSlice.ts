@@ -1,31 +1,61 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from './store';
 
-export interface CounterState {
-  value: number;
+export interface CartState {
+  items: Product[];
 }
 
-const initialState: CounterState = {
-  value: 0,
+const initialState: CartState = {
+  items: [],
 }
 
-
-export const counterState = createSlice({
-  name: 'counter',
+//Reducers
+export const cartSlice = createSlice({
+  name: 'cart',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    addToCart: (state: CartState, action: PayloadAction<Product>) => {
+      state.items = [...state.items, action.payload];
     },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
+    removeFromCart: (
+      state: CartState,
+      action: PayloadAction<{ id: string}>
+    ) => {
+      const index = state.items.findIndex(
+        (item: Product) => item._id === action.payload.id
+      );
+
+      let newCart = [...state.items];
+
+      if (index >= 0) {
+        newCart.splice(index, 1);
+      } else {
+        console.warn(
+          `Can't remove product (id: ${action.payload.id}) as its not in cart!`
+        );
+      }
+
+      state.items = newCart;
     }
   }
 });
 
-export const { increment, decrement, incrementByAmount } = counterState.actions;
+export const { addToCart, removeFromCart } = cartSlice.actions;
 
-export default counterState.reducer;
+
+//Selectors 
+export const selectCartItems = (state: RootState) => state.Cart.items;
+
+export const selectCartItemsWithId = (state: RootState, id: string) => {
+  state.Cart.items.filter((item: Product) => item._id === id);
+}
+
+export const selectCartTotal = (state: RootState) => {
+  state.Cart.items.reduce(
+    (total: number, item: Product) => (total += item.price),
+    0
+  );
+}
+
+export default cartSlice.reducer;
