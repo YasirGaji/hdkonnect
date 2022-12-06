@@ -95,7 +95,7 @@ const IconDiv = tw.div`
   items-center
   justify-center
   rounded-full
-  bg-[#1C1C1C]
+  bg-gray-700
   md:h-[70px]
   md:w-[70px]
 `;
