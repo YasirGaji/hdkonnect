@@ -4,6 +4,9 @@ import Image from 'next/image';
 import tw from 'twin.macro';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Currency from 'react-currency-formatter';
+import { removeFromCart } from '../redux/cartSlice';
+import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
 
 
 interface Props {
@@ -12,8 +15,20 @@ interface Props {
 }
 
 function CheckoutProduct({ items, id }: Props) {
+  const dispatch = useDispatch();
+
+  const removeItemFromCart = () => {
+    // Remove item from cart
+    dispatch(removeFromCart({ id }));
+
+    // Notification after removal
+    toast.error(`${items[0].title} removed from cart`, {
+      position: "top-center"
+    })
+  }
+
   return (
-    <div>
+    <CapitalDiv>
       <ImageDiv>
         <Image
           src={urlFor(items[0].image[0]).url()}
@@ -43,20 +58,37 @@ function CheckoutProduct({ items, id }: Props) {
           </DetailsP>
         </OutermostDiv>
 
-        <div>
-          <h4>
+        <OutermostDiv2>
+          <CurrencyH4>
             <Currency
               quantity = {items.reduce((total, item) => total + item.price, 0)}
               currency = 'NGN'
             />
-          </h4>
-        </div>
+          </CurrencyH4>
+            <button
+              onClick={removeItemFromCart}
+              className='text-blue-500 hover:underline'
+            >
+              Remove
+            </button>
+        </OutermostDiv2>
       </TextDiv>
-    </div>
+    </CapitalDiv>
   )
 }
 
 export default CheckoutProduct;
+
+const CapitalDiv = tw.div`
+  flex
+  flex-col
+  gap-x-4
+  border-b
+  border-gray-200
+  pb-5
+  lg:flex-row
+  lg:items-center
+`;
 
 const ImageDiv = tw.div`
   relative
@@ -107,4 +139,15 @@ const DetailsP = tw.p`
   hover:underline
 `;
 
+const OutermostDiv2 = tw.div`
+  flex
+  flex-col
+  items-end
+  space-y-4
+`;
 
+const CurrencyH4 = tw.h4`
+  text-xl
+  font-semibold
+  lg:text-2xl
+`;

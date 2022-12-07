@@ -46,7 +46,7 @@ function Checkout() {
           <H1>
             {items.length > 0 ? 'Shopping Cart' : 'Your cart is empty'}
           </H1>
-          <p>We accept returns and Exchanges</p>
+          <P>We accept returns and Exchanges</P>
 
           {items.length === 0 &&(
             <Button 
@@ -77,4 +77,8 @@ const H1 = tw.h1`
   font-semibold
   lg:text-4xl
 
+`;
+
+const P = tw.p`
+  mb-3
 `;
