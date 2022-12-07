@@ -31,7 +31,7 @@
   }
 
   .headerStyle {
-    @apply sticky top-0 z-30 flex w-full items-center justify-between bg-[#E7ECEE];
+    @apply sticky top-0 z-30 flex w-full items-center justify-between bg-[#F4F7F9];
   }
 
   .headerIcon {

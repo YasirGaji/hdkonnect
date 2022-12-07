@@ -33,7 +33,7 @@ function Checkout() {
   }, [items]) // This function accepts an item every time there's a change it chacks the id of it's result and matches it with the right id for confirmation else if it's an empty array it would push the results as well would group every item as an array of product even if it's 1 variant or several of the same item (an empty dependency array means this useEffect will only run once on mount)
 
   return (
-    <div>
+    <OverallDiv>
       <Head>
         <title>Cart - HDKonnect</title>
         <link rel="icon" href="/favicon.ico" />
@@ -41,8 +41,8 @@ function Checkout() {
 
       <Header />
 
-      <main>
-        <div>
+      <Main>
+        <div className='px-5'>
           <H1>
             {items.length > 0 ? 'Shopping Cart' : 'Your cart is empty'}
           </H1>
@@ -57,19 +57,32 @@ function Checkout() {
         </div>
 
         {items.length > 0 && (
-          <div>
+          <div className='mx-5 md:mx-8'>
             {Object.entries(groupeedItemsInCart).map(([key, items]) => (
               <CheckoutProduct key={key} items={items} id={key} />
             ))} 
           </div>
         )}
         {/* */}
-      </main>
-    </div>
+      </Main>
+    </OverallDiv>
   )
 }
 
 export default Checkout;
+
+
+const OverallDiv = tw.div`
+  min-h-screen
+  overflow-hidden
+  bg-[#F4F7F9]
+`;
+
+const Main = tw.main`
+  mx-auto
+  max-w-5xl
+  pb-24
+`;
 
 const H1 = tw.h1`
   my-4
