@@ -3,6 +3,7 @@ import { urlFor } from '../sanity';
 import Image from 'next/image';
 import tw from 'twin.macro';
 import { ChevronDownIcon } from '@heroicons/react/solid';
+import Currency from 'react-currency-formatter';
 
 
 interface Props {
@@ -43,7 +44,12 @@ function CheckoutProduct({ items, id }: Props) {
         </OutermostDiv>
 
         <div>
-          <h4></h4>
+          <h4>
+            <Currency
+              quantity = {items.reduce((total, item) => total + item.price, 0)}
+              currency = 'NGN'
+            />
+          </h4>
         </div>
       </TextDiv>
     </div>
@@ -100,3 +106,5 @@ const DetailsP = tw.p`
   text-blue-500 
   hover:underline
 `;
+
+
