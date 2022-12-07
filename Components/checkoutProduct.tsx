@@ -24,17 +24,26 @@ function CheckoutProduct({ items, id }: Props) {
       </ImageDiv>
 
       <TextDiv>
-        <div>
-          <div>
-            <h4>
+        <OutermostDiv>
+          <SubDiv>
+            <H4>
               {items[0].title}
-            </h4>
+            </H4>
 
-            <p>
+            <ItemCount>
               {items.length}
               <ChevronDownIcon className='h-6 w-6 text-blue-500' />
-            </p>
-          </div>
+            </ItemCount>
+          </SubDiv>
+
+          <DetailsP>
+            Show product details 
+            <ChevronDownIcon className='h-6 w-6' />
+          </DetailsP>
+        </OutermostDiv>
+
+        <div>
+          <h4></h4>
         </div>
       </TextDiv>
     </div>
@@ -56,4 +65,38 @@ const TextDiv = tw.div`
   flex-1
   items-end
   lg:items-center
+`;
+
+const OutermostDiv = tw.div`
+  flex-1
+  space-y-4
+`;
+
+const SubDiv = tw.div`
+  flex
+  flex-col
+  gap-x-8
+  text-xl
+  lg:flex-row
+  lg:text-2xl
+`;
+
+const H4 = tw.h4`
+  font-semibold
+  lg:w-96
+`;
+
+const ItemCount = tw.p`
+  flex
+  items-center
+  gap-x-1
+  font-semibold
+`;
+
+const DetailsP = tw.p`
+  flex 
+  cursor-pointer 
+  items-end 
+  text-blue-500 
+  hover:underline
 `;
