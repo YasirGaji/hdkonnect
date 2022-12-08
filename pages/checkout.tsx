@@ -109,22 +109,37 @@ function Checkout() {
                   <PayDiv2>
                     <H42>
                       <span>
-                        Pay Monthly
+                        Pay Installments
                       </span>
 
                       <span>
-                        With Apple Card
+                        With Our Payment Plan
                       </span>
 
                       <span>
-                        ₦30,000.00/mo at 0% APR<sup className='-top-1'>0</sup>
+                        ₦50,000.00/mo at 0% APR<sup className='-top-1'>0</sup>
                       </span>
                     </H42>
-                    <Button title='Checkout with Apple Card monthly installments' />
-                    <P1>₦0.00 due today, which includes applicable full-price items, down payments, shipping, and taxes</P1>
+                    <Button title='Checkout with Bank Transfer' />
+                    <P1>Includes applicable full-price items, down payments, shipping, and taxes</P1>
                   </PayDiv2>
 
-                  <div></div>
+                  <PaycardDiv>
+                    <PaycardH4>
+                      Pay in full
+                      <span>
+                        <Currency quantity={cartTotal + 3000} currency="NGN" />
+                      </span>
+                    </PaycardH4>
+
+                    <Button
+                      noIcon
+                      ///loading={loading}
+                      title="Checkout"
+                      width="w-full"
+                      //onClick={createCheckoutSession}
+                    />
+                  </PaycardDiv>
                 </PayDiv>
               </OuterPayDiv>
             </TotalDiv1>
@@ -259,4 +274,25 @@ const P1 = tw.p`
   mt-2 
   max-w-[240px]
   text-[13px]
+`;
+
+const PaycardDiv = tw.div`
+  flex 
+  flex-1 
+  flex-col 
+  items-center 
+  space-y-8 
+  rounded-xl 
+  bg-gray-200 
+  p-8 
+  py-12 
+  md:order-2
+`;
+
+const PaycardH4 = tw.h4`
+  mb-4 
+  flex 
+  flex-col 
+  text-xl 
+  font-semibold
 `;
