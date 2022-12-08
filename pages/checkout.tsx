@@ -80,7 +80,7 @@ function Checkout() {
                   
                   <OuterZipcode>
                     <ZipcodeDiv>
-                      Estimated tax for{" "}
+                      Estimated tax for:{" "}
                       <Zipcode>
                         Enter Zip Code
                         <ChevronDownIcon className='h-6 w-6' />
@@ -100,9 +100,33 @@ function Checkout() {
                 </Total>
               </TotalDiv2>
 
-              <div>
-                
-              </div>
+              <OuterPayDiv>
+                <H4>
+                  How would you like to checkout?
+                </H4>
+
+                <PayDiv>
+                  <PayDiv2>
+                    <H42>
+                      <span>
+                        Pay Monthly
+                      </span>
+
+                      <span>
+                        With Apple Card
+                      </span>
+
+                      <span>
+                        ₦30,000.00/mo at 0% APR<sup className='-top-1'>0</sup>
+                      </span>
+                    </H42>
+                    <Button title='Checkout with Apple Card monthly installments' />
+                    <P1>₦0.00 due today, which includes applicable full-price items, down payments, shipping, and taxes</P1>
+                  </PayDiv2>
+
+                  <div></div>
+                </PayDiv>
+              </OuterPayDiv>
             </TotalDiv1>
           </div>
         )}
@@ -191,4 +215,48 @@ const Total = tw.div`
   pt-4
   text-xl
   font-semibold
+`;
+
+const OuterPayDiv = tw.div`
+  my-14 
+  space-y-4 
+`;
+
+const H4 = tw.h4`
+  text-xl
+  font-semibold
+`;
+
+const PayDiv = tw.div`
+  flex
+  flex-col
+  gap-4  
+  md:flex-row
+`;
+
+const PayDiv2 = tw.div`
+  order-2
+  flex 
+  flex-1 
+  flex-col 
+  items-center 
+  rounded-xl 
+  bg-gray-200 
+  p-8 
+  py-12 
+  text-center 
+`;
+
+const H42 = tw.h4`
+  mb-4
+  flex 
+  flex-col 
+  text-xl 
+  font-semibold
+`;
+
+const P1 = tw.p`
+  mt-2 
+  max-w-[240px]
+  text-[13px]
 `;
