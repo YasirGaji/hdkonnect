@@ -4,7 +4,7 @@ import Header from '../Components/Header';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-// import Currency from 'react-currency-formatter';
+import Currency from 'react-currency-formatter';
 import  { useSelector }  from  'react-redux' ;
 import { usePaystackPayment } from 'react-paystack';
 import Button from '../Components/Button';
@@ -18,6 +18,7 @@ import tw from 'twin.macro';
 
 function Checkout() {
   const items = useSelector(selectCartItems);
+  const cartTotal = useSelector(selectCartTotal);
   const router = useRouter();
   const [groupeedItemsInCart, setGroupedItemsInCart] = useState(
     { } as { [key: string]: Product[] }
@@ -61,6 +62,32 @@ function Checkout() {
             {Object.entries(groupeedItemsInCart).map(([key, items]) => (
               <CheckoutProduct key={key} items={items} id={key} />
             ))} 
+
+            <TotalDiv1>
+              <TotalDiv2>
+                <TotalDiv3>
+                  <TotalDiv4>
+                    <p>Subtotal</p>
+                    <p>
+                      <Currency quantity={cartTotal} currency="NGN" />
+                    </p>
+                  </TotalDiv4>
+
+                  <ShippingDiv>
+                    <p>Shipping</p>
+                    <p>₦3,000</p>
+                  </ShippingDiv>
+                  
+                  <div>
+                    <div>
+                      Enter Zip Code
+                      <ChevronDownIcon className='h-6 w-6' />
+                    </div>
+                  </div>
+                  
+                </TotalDiv3>
+              </TotalDiv2>
+            </TotalDiv1>
           </div>
         )}
         {/* */}
@@ -94,4 +121,30 @@ const H1 = tw.h1`
 
 const P = tw.p`
   mb-3
+`;
+
+const TotalDiv1 = tw.div`
+  my-12
+  mt-6
+  ml-auto 
+  max-w-3xl 
+`;
+
+const TotalDiv2 = tw.div`
+  divide-y
+  divide-gray-300
+`;
+
+const TotalDiv3 = tw.div`
+  pb-4
+`;
+
+const TotalDiv4 = tw.div`
+  flex
+  justify-between
+`;
+
+const ShippingDiv = tw.div`
+  flex
+  justify-between
 `;
