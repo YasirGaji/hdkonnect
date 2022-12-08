@@ -75,18 +75,34 @@ function Checkout() {
 
                   <ShippingDiv>
                     <p>Shipping</p>
-                    <p>₦3,000</p>
+                    <p>₦3,000.00</p>
                   </ShippingDiv>
                   
-                  <div>
-                    <div>
-                      Enter Zip Code
-                      <ChevronDownIcon className='h-6 w-6' />
-                    </div>
-                  </div>
-                  
+                  <OuterZipcode>
+                    <ZipcodeDiv>
+                      Estimated tax for{" "}
+                      <Zipcode>
+                        Enter Zip Code
+                        <ChevronDownIcon className='h-6 w-6' />
+                      </Zipcode>
+                    </ZipcodeDiv>
+                      <p>
+                        ₦ - 
+                      </p>
+                  </OuterZipcode>
                 </TotalDiv3>
+
+                <Total>
+                  <h4>Total</h4>
+                  <h4>
+                    <Currency quantity={cartTotal + 3000} currency="NGN" />
+                  </h4>
+                </Total>
               </TotalDiv2>
+
+              <div>
+                
+              </div>
             </TotalDiv1>
           </div>
         )}
@@ -147,4 +163,32 @@ const TotalDiv4 = tw.div`
 const ShippingDiv = tw.div`
   flex
   justify-between
+`;
+
+const OuterZipcode = tw.div`
+  flex
+  justify-between
+`;
+
+const ZipcodeDiv = tw.div`
+  flex
+  flex-col
+  gap-x-1
+  lg:flex-row
+`;
+
+const Zipcode = tw.p`
+  flex
+  cursor-pointer
+  items-end
+  text-blue-500
+  hover:underline
+`;
+
+const Total = tw.div`
+  flex
+  justify-between
+  pt-4
+  text-xl
+  font-semibold
 `;
