@@ -18,7 +18,7 @@ interface ProductProps {
 // FRONTEND CODE
 
 const Home = ({ categories, products }: ProductProps) => {
-  console.log(products);
+  
   return (
     <div className="">
       <Head>

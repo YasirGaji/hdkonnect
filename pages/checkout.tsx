@@ -12,11 +12,11 @@ import CheckoutProduct from '../Components/checkoutProduct';
 import { selectCartItems, selectCartTotal } from '../redux/cartSlice';
 // import { fetchPostJSON } from '../utils/api-helpers';
 // import getPaystack from '../utils/get-paystack';
+// import PaystackPop from '@paystack/inline-js';
 import tw from 'twin.macro';
 
 
-
-function Checkout() {
+function Checkout(): JSX.Element {
   const items = useSelector(selectCartItems);
   const cartTotal = useSelector(selectCartTotal);
   const router = useRouter();
@@ -34,10 +34,8 @@ function Checkout() {
   }, [items]) // This function accepts an item every time there's a change it chacks the id of it's result and matches it with the right id for confirmation else if it's an empty array it would push the results as well would group every item as an array of product even if it's 1 variant or several of the same item (an empty dependency array means this useEffect will only run once on mount)
   const [loading, setLoading] = useState(false);
 
-
   const createCheckoutSession = async () => {
     setLoading(true);
-
 
   }
 

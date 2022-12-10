@@ -8,7 +8,7 @@ interface ProductProps {
 }
 
 const ProductTab = ({ categories, products }: ProductProps) => {
-  console.log(categories);
+  //console.log(categories);
 
   const showProducts = (category: number) => {
     return products
