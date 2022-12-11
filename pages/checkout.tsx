@@ -37,6 +37,8 @@ function Checkout(): JSX.Element {
   const createCheckoutSession = async () => {
     setLoading(true);
 
+    const checkoutSession: Stripe.Checkout.Session = await fetchPostJSON("")
+
   }
 
   return (
