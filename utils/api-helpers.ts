@@ -20,5 +20,3 @@ export async function fetchPostJSON(url: string, data?: {}) {
     throw error;
   }
 }
-
-Footer;

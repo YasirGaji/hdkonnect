@@ -10,7 +10,8 @@ import { usePaystackPayment } from 'react-paystack';
 import Button from '../Components/Button';
 import CheckoutProduct from '../Components/checkoutProduct';
 import { selectCartItems, selectCartTotal } from '../redux/cartSlice';
-// import { fetchPostJSON } from '../utils/api-helpers';
+import { fetchPostJSON } from '../utils/api-helpers';
+import Stripe from 'stripe';
 // import getPaystack from '../utils/get-paystack';
 // import PaystackPop from '@paystack/inline-js';
 import tw from 'twin.macro';
@@ -37,8 +38,12 @@ function Checkout(): JSX.Element {
   const createCheckoutSession = async () => {
     setLoading(true);
 
-    const checkoutSession: Stripe.Checkout.Session = await fetchPostJSON("")
-
+    const checkoutSession: Stripe.Checkout.Session = await fetchPostJSON(
+      "/api/checkout_sessions",
+      {
+        items,
+      }
+    )
   }
 
   return (
