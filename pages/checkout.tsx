@@ -33,6 +33,7 @@ function Checkout(): JSX.Element {
 
     setGroupedItemsInCart(groupedItems);
   }, [items]) // This function accepts an item every time there's a change it chacks the id of it's result and matches it with the right id for confirmation else if it's an empty array it would push the results as well would group every item as an array of product even if it's 1 variant or several of the same item (an empty dependency array means this useEffect will only run once on mount)
+
   const [loading, setLoading] = useState(false);
 
   const createCheckoutSession = async () => {
@@ -43,7 +44,12 @@ function Checkout(): JSX.Element {
       {
         items,
       }
-    )
+    );
+
+    if ((checkoutSession as any).statusCode === 500) {
+      console.error((checkoutSession as any).message);
+      return;
+    }
   }
 
   return (
