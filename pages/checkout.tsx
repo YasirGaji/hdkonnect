@@ -15,6 +15,7 @@ import Stripe from 'stripe';
 // import getPaystack from '../utils/get-paystack';
 // import PaystackPop from '@paystack/inline-js';
 import tw from 'twin.macro';
+import getStripe from '../utils/get-stripe';
 
 
 function Checkout(): JSX.Element {
@@ -49,7 +50,17 @@ function Checkout(): JSX.Element {
     if ((checkoutSession as any).statusCode === 500) {
       console.error((checkoutSession as any).message);
       return;
-    }
+    } // checks for internal server error
+
+    const stripe = await getStripe(); // gets stripe object
+
+    const { error } = await stripe!.redirectToCheckout({
+      sessionId: checkoutSession.id,
+    });
+
+    console.warn(error.message); //if there's an issue with the checkout session it would log the error message 
+
+    setLoading(false);
   }
 
   return (
