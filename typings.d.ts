@@ -21,6 +21,7 @@ interface Image {
 }
 
 interface Product {
+  name: any
   _id: string
   _createdAt: string
   _updatedAt: string
