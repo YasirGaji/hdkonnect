@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 });
 
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const items: Product[] = req.body.items;
 
@@ -15,7 +15,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       price_data: {
         currency: "ngn",
         product_data: {
-          name: item.name,
+          name: item.title,
           images: [urlFor(item.image).url()!],
         },
         unit_amount: item.price * 100,
@@ -38,8 +38,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
           images: JSON.stringify(
             items.map((item) => item.image[0].asset.url)
           ),
-        }
-      }
+        },        
+      };
+
+      const checkoutSession: Stripe.Checkout.Session = await stripe.checkout.sessions.create(params);
     } catch (error) {
 
     }
