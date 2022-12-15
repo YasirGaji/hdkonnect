@@ -13,10 +13,10 @@ export async function fetchPostJSON(url: string, data?: {}) {
       body: JSON.stringify(data || {}),
     });
     return await response.json();
-  } catch (error) {
-    if (error instanceof Error) {
-      throw new Error(error.message);
+  } catch (err) {
+    if (err instanceof Error) {
+      throw new Error(err.message);
     }
-    throw error;
+    throw err;
   }
 }
