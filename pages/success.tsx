@@ -12,7 +12,7 @@ function Success() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <header>
+      <header className='mx-auto max-w-xl'>
         <Link href="/">
           <LogoDiv>
             <Image 
@@ -24,6 +24,23 @@ function Success() {
           </LogoDiv>
         </Link>
       </header>
+
+      <main>
+        <Section1>
+          <Link href="/">
+            <LogoDiv2>
+              <Image 
+                src="https://i.ibb.co/rd0nsrb/Untitled-design.jpg"
+                layout="fill"
+                objectFit="contain"
+                alt="logo"
+              />
+            </LogoDiv2>
+          </Link>
+
+          <div></div>
+        </Section1>
+      </main>
     </div>
   )
 }
@@ -39,4 +56,27 @@ const LogoDiv = tw.div`
   cursor-pointer
   transition
   lg:hidden
+`;
+
+const LogoDiv2 = tw.div`
+  relative
+  ml-4
+  h-16
+  w-8
+  cursor-pointer
+  transition
+  lg:inline-flex
+`;
+
+const Section1 = tw.section`
+  order-2
+  mx-auto
+  max-w-xl
+  pb-12
+  lg:mx-0
+  lg:max-w-none
+  lg:pr-16
+  lg:pt-16
+  xl:pl-16
+  2xl:pl-44
 `;
