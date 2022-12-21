@@ -56,6 +56,20 @@ function Success() {
               </H4>
             </div>
           </OverallDiv>
+
+          <div>
+            <SubDiv1>
+              <p>Order Confirmed</p>
+              <P3>
+                Thank you for your order it would be processed shortly. We will send you a confirmation email when your order has shipped.
+              </P3>
+            </SubDiv1>
+
+            <SubDiv2>
+              <P4>Order Details</P4>
+              <p>Processing</p>
+            </SubDiv2>
+          </div>
         </Section1>
       </main>
     </div>
@@ -125,6 +139,24 @@ const P1 = tw.p`
 
 const H4 = tw.h4`
   text-lg
+`;
+
+const SubDiv1 = tw.div`
+  space-y-2 
+  pb-3
+`;
+
+const SubDiv2 = tw.div`
+
+`;
+
+const P3 = tw.p`
+  text-sm 
+  text-gray-600
+`;
+
+const P4 = tw.p`
+
 `;
 
 
