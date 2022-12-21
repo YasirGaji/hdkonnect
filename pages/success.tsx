@@ -3,8 +3,13 @@ import Link from 'next/link'
 import React from 'react'
 import tw from 'twin.macro'
 import Image from 'next/image'
+import { CheckIcon } from '@heroicons/react/outline'
+import { useRouter } from 'next/router'
 
 function Success() {
+  const router = useRouter();
+  const { session_id } = router.query;
+
   return (
     <div>
       <Head>
@@ -38,7 +43,19 @@ function Success() {
             </LogoDiv2>
           </Link>
 
-          <div></div>
+          <OverallDiv>
+            <CheckDiv>
+              <CheckIcon className='h-8 w-8' />
+            </CheckDiv>
+
+            <div>
+              <P1>Order #{session_id?.slice(-5)}</P1>
+              <H4>
+                Thank you{" "}
+                {/* {session ? session_id.user?.name?.split(" ")[0] : "for your order"} */}
+              </H4>
+            </div>
+          </OverallDiv>
         </Section1>
       </main>
     </div>
@@ -80,3 +97,34 @@ const Section1 = tw.section`
   xl:pl-16
   2xl:pl-44
 `;
+
+const OverallDiv = tw.div`
+  my-8 
+  ml-4 
+  flex
+  space-x-4 
+  lg:ml-14 
+  xl:ml-0 
+`;
+
+const CheckDiv = tw.div`
+  flex
+  h-11
+  w-11
+  items-center
+  justify-center
+  rounded-full
+  border-2
+  border-black
+`;
+
+const P1 = tw.p`
+  text-sm
+  text-gray-600
+`;
+
+const H4 = tw.h4`
+  text-lg
+`;
+
+
