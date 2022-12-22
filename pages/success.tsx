@@ -57,7 +57,7 @@ function Success() {
             </div>
           </OverallDiv>
 
-          <div>
+          <OverallDiv2>
             <SubDiv1>
               <p>Order Confirmed</p>
               <P3>
@@ -69,7 +69,9 @@ function Success() {
               <P4>Order Details</P4>
               <p>Processing</p>
             </SubDiv2>
-          </div>
+          </OverallDiv2>
+
+          <div></div>
         </Section1>
       </main>
     </div>
@@ -121,6 +123,17 @@ const OverallDiv = tw.div`
   xl:ml-0 
 `;
 
+const OverallDiv2 = tw.div`
+  mx-4 
+  divide-y 
+  divide-gray-300 
+  rounded-md 
+  border 
+  border-gray-300 
+  p-4 
+  lg:ml-14 
+`;
+
 const CheckDiv = tw.div`
   flex
   h-11
@@ -147,7 +160,8 @@ const SubDiv1 = tw.div`
 `;
 
 const SubDiv2 = tw.div`
-
+  pt-3 
+  text-sm
 `;
 
 const P3 = tw.p`
