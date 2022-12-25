@@ -71,7 +71,13 @@ function Success() {
             </SubDiv2>
           </OverallDiv2>
 
-          <div></div>
+          <div>
+            <p>Order Updates</p>
+
+            <p>
+              You will receive an email confirmation shortly. You can also check the status of your order at any time by visiting your account or reaching us via direct messaging.
+            </p>
+          </div>
         </Section1>
       </main>
     </div>
@@ -173,14 +179,3 @@ const P4 = tw.p`
 
 `;
 
-#36062 ELLA
-#36060 Pauline Anjie
-#36059 UNUNUMA
-#36057 Ebun Williams
-#36056 FUNMI ODUSAMI
-#36051 Ms. Ciata
-#36039 Utobong UMANAH
-#36025 Thelma
-#36024 CHIAMAKA NWAOGU
-#36023 IBUKUN
-#36022 AISHAT
