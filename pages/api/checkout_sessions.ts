@@ -66,7 +66,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   if (req.method === "POST") {
     const items: Product[] = req.body.items;
@@ -114,3 +114,12 @@ export default async function handler(
     res.status(405).end("Method Not Allowed");
   }
 }
+
+
+
+
+
+
+
+
+
