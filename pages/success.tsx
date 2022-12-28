@@ -71,12 +71,16 @@ function Success() {
             </SubDiv2>
           </OverallDiv2>
 
-          <div>
+          <OverallDiv3>
             <p>Order Updates</p>
 
-            <p>
+            <P6>
               You will receive an email confirmation shortly. You can also check the status of your order at any time by visiting your account or reaching us via direct messaging.
-            </p>
+            </P6>
+          </OverallDiv3>
+
+          <div>
+            <P7>Need help? Contact us</P7>
           </div>
         </Section1>
       </main>
@@ -140,6 +144,17 @@ const OverallDiv2 = tw.div`
   lg:ml-14 
 `;
 
+const OverallDiv3 = tw.div`
+  my-4 
+  mx-4 
+  space-y-2 
+  rounded-md 
+  border 
+  border-gray-300 
+  p-4 
+  lg:ml-14
+`;
+
 const CheckDiv = tw.div`
   flex
   h-11
@@ -179,3 +194,13 @@ const P4 = tw.p`
 
 `;
 
+const P6 = tw.p`
+  text-sm 
+  text-gray-600
+`;
+
+
+const P7 = tw.p`
+  hidden 
+  lg:inline
+`;
