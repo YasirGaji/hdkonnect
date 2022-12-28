@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import tw from 'twin.macro'
 import Image from 'next/image'
-import { CheckIcon } from '@heroicons/react/outline'
+import { CheckIcon, ChevronDownIcon, ChevronUpIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
 import Button from '../Components/Button'
 import { useMediaQuery } from 'react-responsive'
@@ -12,12 +12,14 @@ function Success() {
   const router = useRouter();
   const { session_id } = router.query;
   const [mounted, setMounted] = useState(false);
+  const [showOrderSumary, setShowOrderSummary] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   const isTableOrMobile = useMediaQuery({ query: '(max-width: 1024px)' });
+  const showOrderSummaryCondition = isTableOrMobile ? showOrderSumary : true;
 
   return (
     <div>
@@ -101,6 +103,28 @@ function Success() {
             )}
           </div>
         </Section1>
+
+        {mounted && (
+          <Section2>
+            <div>
+              <div>
+                <button>
+                  <ShoppingCartIcon className='h-4 w-4' />
+
+                  <p>Show order summary</p>
+
+                  {
+                    showOrderSummaryCondition ? (
+                      <ChevronUpIcon className='h-4 w-4' />
+                    ) : (
+                      <ChevronDownIcon className='h-4 w-4' />
+                    )
+                  }
+                </button>
+              </div>
+            </div>
+          </Section2>
+        )}
       </main>
     </div>
   )
@@ -221,4 +245,8 @@ const P6 = tw.p`
 const P7 = tw.p`
   hidden 
   lg:inline
+`;
+
+const Section2 = tw.section`
+
 `;
