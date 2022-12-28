@@ -9,6 +9,8 @@ This is a gadget ecommerce website built on the Next JS technology and [Tailwind
 
  [Groq](https://www.sanity.io/docs/groq) was used for the queries to the Sanity CMS, [Redux](https://redux.js.org/) for the state management, [React-Hot-Tost](https://react-hot-toast.com/) for notification setup, [React-currency-formatter](https://www.npmjs.com/package/react-currency-formatter) for the checkout currency section.
 
+ [React-Responsive](https://www.npmjs.com/package/react-responsive) for the responsive design, [React-Image](https://www.npmjs.com/package/react-image) for the image loading, [React-Icons](https://react-icons.github.io/react-icons/) for the icons, [React-Router-Dom](https://reactrouter.com/web/guides/quick-start) for the routing, [React-Stripe-Checkout](https://www.npmjs.com/package/react-stripe-checkout) for the stripe checkout, [React-Flip-Move](https://www.npmjs.com/package/react-flip-move) for the animation of the products.
+
 ## [View Project](#)
 
 <!-- ## How to use

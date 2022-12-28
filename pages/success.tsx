@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import tw from 'twin.macro'
 import Image from 'next/image'
 import { CheckIcon } from '@heroicons/react/outline'
@@ -9,6 +9,11 @@ import { useRouter } from 'next/router'
 function Success() {
   const router = useRouter();
   const { session_id } = router.query;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div>
