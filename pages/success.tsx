@@ -5,6 +5,8 @@ import tw from 'twin.macro'
 import Image from 'next/image'
 import { CheckIcon } from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
+import Button from '../Components/Button'
+import { useMediaQuery } from 'react-responsive'
 
 function Success() {
   const router = useRouter();
@@ -14,6 +16,8 @@ function Success() {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const isTableOrMobile = useMediaQuery({ query: '(max-width: 1024px)' });
 
   return (
     <div>
@@ -86,6 +90,15 @@ function Success() {
 
           <div>
             <P7>Need help? Contact us</P7>
+
+            {mounted && (
+              <Button 
+                title="Conrinue Shopping"
+                onClick={() => router.push('/')}
+                width={isTableOrMobile ? "w-full" : undefined}
+                padding="py-4"
+              />
+            )}
           </div>
         </Section1>
       </main>
