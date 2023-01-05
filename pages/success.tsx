@@ -21,6 +21,10 @@ function Success() {
   const isTableOrMobile = useMediaQuery({ query: '(max-width: 1024px)' });
   const showOrderSummaryCondition = isTableOrMobile ? showOrderSumary : true;
 
+  const handleShowOrderSummary = () => {
+    setShowOrderSummary(!showOrderSumary);
+  }
+
   return (
     <div>
       <Head>
@@ -107,8 +111,8 @@ function Success() {
         {mounted && (
           <Section2>
             <div>
-              <div>
-                <button>
+              <InnerOverall>
+                <ShowOrderButton onClick={handleShowOrderSummary}>
                   <ShoppingCartIcon className='h-4 w-4' />
 
                   <p>Show order summary</p>
@@ -120,13 +124,16 @@ function Success() {
                       <ChevronDownIcon className='h-4 w-4' />
                     )
                   }
-                </button>
-              </div>
+                </ShowOrderButton>
+              </InnerOverall>
             </div>
           </Section2>
+          
         )}
       </main>
     </div>
+
+    
   )
 }
 
@@ -251,6 +258,21 @@ const Section2 = tw.section`
 
 `;
 
+const ShowOrderButton = tw.button`
+  flex
+  items-center 
+  space-x-2 
+`;
 
+
+const InnerOverall = tw.div`
+  mx-auto 
+  flex 
+  max-w-xl 
+  items-center 
+  justify-between 
+  px-4 
+  py-6 
+`;
 
 
