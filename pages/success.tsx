@@ -7,6 +7,7 @@ import { CheckIcon, ChevronDownIcon, ChevronUpIcon, ShoppingCartIcon } from '@he
 import { useRouter } from 'next/router'
 import Button from '../Components/Button'
 import { useMediaQuery } from 'react-responsive'
+import Currency from 'react-currency-formatter'
 
 function Success() {
   const router = useRouter();
@@ -24,6 +25,11 @@ function Success() {
   const handleShowOrderSummary = () => {
     setShowOrderSummary(!showOrderSumary);
   }
+
+  // const subtotal = products.reduce(
+  //   (acc, product) => acc + product.price.unit_amount / 100,
+  //   0
+  // )
 
   return (
     <div>
@@ -110,7 +116,15 @@ function Success() {
 
         {mounted && (
           <Section2>
-            <div>
+            <div 
+              className={`
+                w-full 
+                ${showOrderSummaryCondition && "border-b"}
+                border-gray-300
+                text-sm 
+                lg:hidden
+              `}
+            >
               <InnerOverall>
                 <ShowOrderButton onClick={handleShowOrderSummary}>
                   <ShoppingCartIcon className='h-4 w-4' />
@@ -125,6 +139,10 @@ function Success() {
                     )
                   }
                 </ShowOrderButton>
+
+                {/* <p>
+                  <Currency quantity={subtotal + 20} />
+                </p> */}
               </InnerOverall>
             </div>
           </Section2>
