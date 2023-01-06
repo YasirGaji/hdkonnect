@@ -34,10 +34,10 @@ function Success({ products }: Props) {
     setShowOrderSummary(!showOrderSumary);
   }
 
-  // const subtotal = products.reduce(
-  //   (acc, product) => acc + product.price.unit_amount / 100,
-  //   0
-  // )
+  const subtotal = products.reduce(
+    (acc, product) => acc + product.price.unit_amount / 100,
+    0
+  )
 
   return (
     <div>
@@ -149,7 +149,7 @@ function Success({ products }: Props) {
                 </ShowOrderButton>
 
                 <P8>
-                  {/* <Currency quantity={subtotal + 20} /> */}
+                  <Currency quantity={subtotal} currency="NGN"  />
                 </P8>
               </InnerOverall>
             </div>
@@ -157,7 +157,15 @@ function Success({ products }: Props) {
             {showOrderSummaryCondition && (
               <div>
                 <div>
-
+                  {products.map((product) => (
+                    <div key={product.id}>
+                      <div>
+                        <div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             )}
