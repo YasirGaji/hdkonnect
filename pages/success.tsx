@@ -8,8 +8,16 @@ import { useRouter } from 'next/router'
 import Button from '../Components/Button'
 import { useMediaQuery } from 'react-responsive'
 import Currency from 'react-currency-formatter'
+import { GetServerSideProps } from 'next'
+import { fetchLineItems } from '../utils/fetchLineItems'
 
-function Success() {
+
+interface Props {
+  products: StripeProduct[];
+}
+
+function Success({ products }: Props) {
+  console.log(products)
   const router = useRouter();
   const { session_id } = router.query;
   const [mounted, setMounted] = useState(false);
@@ -140,11 +148,19 @@ function Success() {
                   }
                 </ShowOrderButton>
 
-                {/* <p>
-                  <Currency quantity={subtotal + 20} />
-                </p> */}
+                <P8>
+                  {/* <Currency quantity={subtotal + 20} /> */}
+                </P8>
               </InnerOverall>
             </div>
+
+            {showOrderSummaryCondition && (
+              <div>
+                <div>
+
+                </div>
+              </div>
+            )}
           </Section2>
           
         )}
@@ -157,6 +173,19 @@ function Success() {
 
 export default Success;
 
+export const getServerSideProps: GetServerSideProps<Props> = async ({query}) => {
+  const sessionId = query.session_id as string
+  const products = await fetchLineItems(sessionId)
+
+  return {
+    props: {
+      products
+    },
+  }
+}
+
+
+//STYLES
 
 const LogoDiv = tw.div`
   relative
@@ -293,4 +322,8 @@ const InnerOverall = tw.div`
   py-6 
 `;
 
-
+const P8 = tw.p`
+  text-xl 
+  font-medium 
+  text-black 
+`;
