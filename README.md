@@ -1,8 +1,8 @@
 # HDKonnect
 
-This is a gadget ecommerce website built on the Next JS technology and [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2). As well as  [Sanity io](https://sanity.io/) as the CMS fior the products.
+This is a gadget ecommerce website built on the Next JS technology and [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2). As well as  [Sanity io](https://sanity.io/) as the CMS for the products.
 
-## Not to forget
+## Other tools/technology and libraries used
 
  [Styled Component](https://styled-components.com/) and [Twin Macro](https://github.com/ben-rogerson/twin.macro/blob/master/docs/prop-styling-guide.md) was introduced for the styling of the components. Responsible styling.
  Also, used [Headless UI](https://headlessui.dev/) for the products sections and [Hero Icons](https://heroicons.com/) for the icons.
@@ -11,7 +11,15 @@ This is a gadget ecommerce website built on the Next JS technology and [Tailwind
 
  [React-Responsive](https://www.npmjs.com/package/react-responsive) for the responsive design, [React-Image](https://www.npmjs.com/package/react-image) for the image loading, [React-Icons](https://react-icons.github.io/react-icons/) for the icons, [React-Router-Dom](https://reactrouter.com/web/guides/quick-start) for the routing, [React-Stripe-Checkout](https://www.npmjs.com/package/react-stripe-checkout) for the stripe checkout, [React-Flip-Move](https://www.npmjs.com/package/react-flip-move) for the animation of the products. Learnt how to create API routes in Next JS.
 
-## [View Project](#)
+ Learnt authentication using [Next-Auth](https://next-auth.js.org/) library.
+
+## Errors I Faced
+
+  1. The first error I faced was the version conflict error of npm version when installing sanity cli. I had to downgrade the npm version to 6.14.8 to install sanity cli.
+
+  2. The second error I faced was upstream dependency conflict error in my node package manager (npm). I had to install the legacy peer dependency to resolve the error.
+
+## [View Project](https://hdkonnect)
 
 <!-- ## How to use
 
