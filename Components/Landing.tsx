@@ -17,7 +17,7 @@ function Landing() {
           </WordSpan>
 
           <WordSpan>
-            We Get Am
+            Here's your one stop shop
           </WordSpan>
         </H1>
 
