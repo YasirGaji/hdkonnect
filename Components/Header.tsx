@@ -14,7 +14,7 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 
 
 function Header() {
-  const session = false;
+  const { data: session } = useSession();
   const items = useSelector(selectCartItems)
 
   return (
@@ -51,7 +51,7 @@ function Header() {
         {session ? (
           <Image
             src = {
-            //session.user?.image ||
+            session.user?.image ||
               "https://images.unsplash.com/photo-1615655406736-b37c4fabf923?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80" 
             }
             alt=""
