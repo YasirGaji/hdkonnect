@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/outline'
 import { useSelector } from 'react-redux';
 import { selectCartItems } from '../redux/cartSlice'
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 
 
@@ -57,12 +58,12 @@ function Header() {
             className="cursor-pointer rounded-full"
             width={34}
             height={34}
-           // onClick={() => signOut()}
+           onClick={() => signOut()}
           />
         ) : (
           <UserIcon 
             className='headerIcon' 
-            // onClick={() => signIn()} 
+            onClick={() => signIn()} 
           />
         )}
 

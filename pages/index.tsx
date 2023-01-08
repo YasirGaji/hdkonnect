@@ -8,11 +8,14 @@ import ProductTab from '../Components/ProductTab'
 import { fetchCategories } from '../utils/fetchCategories'
 import { fetchProducts } from '../utils/fetchProducts'
 import Cart from '../Components/Cart'
+import { getSession } from 'next-auth/react'
+import { Session } from 'next-auth'
 
 
 interface ProductProps {
   categories: Category[];
   products: Product[];
+  session: Session | null;
 }
 
 // FRONTEND CODE
@@ -51,9 +54,10 @@ const Home = ({ categories, products }: ProductProps) => {
 export default Home;
 
 // BACKEND CODE
-export const getServerSideProps: GetServerSideProps<ProductProps> = async () => {
+export const getServerSideProps: GetServerSideProps<ProductProps> = async (context) => {
   const categories = await fetchCategories();
-  const products = await fetchProducts()
+  const products = await fetchProducts();
+  const session = await getSession(context);
 
   return {
     props: {
