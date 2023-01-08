@@ -63,6 +63,7 @@ export const getServerSideProps: GetServerSideProps<ProductProps> = async (conte
     props: {
       categories,
       products,
+      session,
     },
   }
 }
