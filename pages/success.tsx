@@ -10,7 +10,7 @@ import { useMediaQuery } from 'react-responsive'
 import Currency from 'react-currency-formatter'
 import { GetServerSideProps } from 'next'
 import { fetchLineItems } from '../utils/fetchLineItems'
-
+import { useSession } from 'next-auth/react'
 
 interface Props {
   products: StripeProduct[];
@@ -18,6 +18,7 @@ interface Props {
 
 function Success({ products }: Props) {
   // console.log(products)
+  const { data: session } = useSession();
   const router = useRouter();
   const { session_id } = router.query;
   const [mounted, setMounted] = useState(false);
@@ -81,7 +82,7 @@ function Success({ products }: Props) {
               <P1>Order #{session_id?.slice(-5)}</P1>
               <H4>
                 Thank you{" "}
-                {/* {session ? session_id.user?.name?.split(" ")[0] : "for your order"} */}
+                {session ? session.user?.name?.split(" ")[0] : "for your order"}
               </H4>
             </div>
           </OverallDiv>

@@ -11,7 +11,7 @@ This is a gadget ecommerce website built on the Next JS technology and [Tailwind
 
  [React-Responsive](https://www.npmjs.com/package/react-responsive) for the responsive design, [React-Image](https://www.npmjs.com/package/react-image) for the image loading, [React-Icons](https://react-icons.github.io/react-icons/) for the icons, [React-Router-Dom](https://reactrouter.com/web/guides/quick-start) for the routing, [React-Stripe-Checkout](https://www.npmjs.com/package/react-stripe-checkout) for the stripe checkout, [React-Flip-Move](https://www.npmjs.com/package/react-flip-move) for the animation of the products. Learnt how to create API routes in Next JS.
 
- Learnt authentication using [Next-Auth](https://next-auth.js.org/) library.
+ Learnt authentication using [Next-Auth](https://next-auth.js.org/) library, and how to automatically create a user schema  in Sanity CMS when a user signs up using Next-Auth.
 
 ## Errors I Faced
 
