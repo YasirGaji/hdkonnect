@@ -13,6 +13,8 @@ import product from './product'
 import localeString from './locale/String'
 import localeText from './locale/Text'
 import localeBlockContent from './locale/BlockContent'
+import { user, account } from "next-auth-sanity/schemas";
+
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,5 +33,7 @@ export default createSchema({
     localeText,
     localeBlockContent,
     localeString,
+    user,
+    account
   ]),
 })
