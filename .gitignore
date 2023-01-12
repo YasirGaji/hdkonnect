@@ -5,7 +5,7 @@
 /.pnp
 .pnp.js
 .history
-hdkonnect/node_modules 
+/hdkonnect/node_modules 
 # testing
 /coverage
 
