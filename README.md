@@ -19,7 +19,11 @@ This is a gadget ecommerce website built on the Next JS technology and [Tailwind
 
   2. The second error I faced was upstream dependency conflict error in my node package manager (npm). I had to install the legacy peer dependency to resolve the error.
 
-## [View Project](https://hdkonnect)
+## Current Error
+  
+    1. The current error I am facing is after deployment on vercel there has been astyle conflict. I am trying to resolve it.
+
+## [View Project](https://hdkonnect.vercel.app/)
 
 <!-- ## How to use
 
