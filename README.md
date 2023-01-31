@@ -1,5 +1,7 @@
 # HDKonnect
 
+[Project Completed But Has a Deployment Error]
+
 This is a gadget ecommerce website built on the Next JS technology and [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2). As well as  [Sanity io](https://sanity.io/) as the CMS for the products.
 
 ## Other tools/technology and libraries used
