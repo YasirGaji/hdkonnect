@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import Currency from 'react-currency-formatter';
 import  { useSelector }  from  'react-redux' ;
 import { usePaystackPayment } from 'react-paystack';
-import Button from '../Components/button/styles/Button';
+import Button from '../Components/button';
 import CheckoutProduct from '../Components/checkoutProduct';
 import { selectCartItems, selectCartTotal } from '../redux/cartSlice';
 import { fetchPostJSON } from '../utils/api-helpers';

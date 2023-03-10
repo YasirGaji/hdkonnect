@@ -7,7 +7,7 @@ import tw from 'twin.macro'
 import ProductTab from '../Components/ProductTab'
 import { fetchCategories } from '../utils/fetchCategories'
 import { fetchProducts } from '../utils/fetchProducts'
-import Cart from '../Components/Cart'
+import Cart from '../Components/cart'
 import { getSession } from 'next-auth/react'
 import { Session } from 'next-auth'
 
