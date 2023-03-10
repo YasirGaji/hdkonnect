@@ -1,5 +1,5 @@
 import React from 'react'
-import tw from 'twin.macro'
+import { Span1, Span2 } from './styles/Button'
 
 interface ButtonProps {
   title: string;
@@ -44,42 +44,3 @@ function Button({ title, onClick, width, loading, padding, noIcon }: ButtonProps
 }
 
 export default Button;
-
-
-const Span1 = tw.span`
-  absolute
-  bottom-0
-  right-0
-  -mb-8
-  -mr-5
-  h-20
-  w-8
-  translate-x-1
-  rotate-45
-  transform
-  bg-white
-  opacity-10
-  transition-all
-  duration-300
-  ease-out
-  group-hover:translate-x-0
-`;
-
-const Span2 = tw.span`
-  absolute
-  top-0
-  left-0
-  -mt-1
-  -ml-12
-  h-8
-  w-20
-  -translate-x-1
-  -rotate-45
-  transform
-  bg-white
-  opacity-10
-  transition-all
-  duration-300
-  ease-out
-  group-hover:translate-x-0
-`;

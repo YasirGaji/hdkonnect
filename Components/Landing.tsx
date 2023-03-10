@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from 'twin.macro'
 import Image from 'next/image';
-import Button from './Button';
+import Button from './button';
 
 function Landing() {
   return (
