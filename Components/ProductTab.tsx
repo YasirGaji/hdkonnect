@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
-import Product from './Product'
+import Product from './product'
 
 interface ProductProps {
   categories: Category[];

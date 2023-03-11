@@ -2,15 +2,14 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../Components/header'
-import Landing from '../Components/Landing'
-import tw from 'twin.macro'
+import Landing from '../Components/landing'
 import ProductTab from '../Components/ProductTab'
 import { fetchCategories } from '../utils/fetchCategories'
 import { fetchProducts } from '../utils/fetchProducts'
 import Cart from '../Components/cart'
 import { getSession } from 'next-auth/react'
 import { Session } from 'next-auth'
-
+import tw from 'twin.macro'
 
 interface ProductProps {
   categories: Category[];

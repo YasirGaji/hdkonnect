@@ -1,7 +1,7 @@
 import React from 'react'
-import tw from 'twin.macro'
 import Image from 'next/image';
-import Button from './button';
+import Button from '.././button';
+import { H1, ImageDiv, PoweredSpan, TextDiv, WordSpan } from './styles/Landing';
 
 function Landing() {
   return (
@@ -35,39 +35,3 @@ function Landing() {
 }
 
 export default Landing;
-
-const TextDiv = tw.div`
-  space-y-8
-`;
-
-const PoweredSpan = tw.span`
-  block
-  bg-clip-text
-  text-transparent
-`;
-
-const WordSpan = tw.span`
-  block
-`;
-
-const H1 = tw.h1`
-  space-y-3 
-  text-5xl
-  font-semibold
-  tracking-wide
-  lg:text-6xl
-  xl:text-7xl
-`;
-
-const ImageDiv = tw.div`
-  relative
-  hidden
-  h-[450px]
-  w-[450px]
-  transition-all
-  duration-500
-  md:inline
-  lg:h-[650px]
-  lg:w-[600px]
-`;
-
