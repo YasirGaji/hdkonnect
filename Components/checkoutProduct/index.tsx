@@ -1,10 +1,21 @@
 import React from 'react'
-import { urlFor } from '../sanity';
+import { urlFor } from '../.././sanity';
 import Image from 'next/image';
-import tw from 'twin.macro';
+import {
+  CapitalDiv,
+  ImageDiv,
+  TextDiv,
+  OutermostDiv,
+  SubDiv,
+  H4,
+  ItemCount,
+  DetailsP,
+  OutermostDiv2,
+  CurrencyH4
+} from './styles/checkoutProduct';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import Currency from 'react-currency-formatter';
-import { removeFromCart } from '../redux/cartSlice';
+import { removeFromCart } from '../.././redux/cartSlice';
 import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 
@@ -78,76 +89,3 @@ function CheckoutProduct({ items, id }: Props) {
 }
 
 export default CheckoutProduct;
-
-const CapitalDiv = tw.div`
-  flex
-  flex-col
-  gap-x-4
-  border-b
-  border-gray-200
-  pb-5
-  lg:flex-row
-  lg:items-center
-`;
-
-const ImageDiv = tw.div`
-  relative
-  h-44
-  w-44
-  mt-1.5
-  -mb-2
-`;
-
-const TextDiv = tw.div`
-  flex
-  flex-1
-  items-end
-  lg:items-center
-`;
-
-const OutermostDiv = tw.div`
-  flex-1
-  space-y-4
-`;
-
-const SubDiv = tw.div`
-  flex
-  flex-col
-  gap-x-8
-  text-xl
-  lg:flex-row
-  lg:text-2xl
-`;
-
-const H4 = tw.h4`
-  font-semibold
-  lg:w-96
-`;
-
-const ItemCount = tw.p`
-  flex
-  items-center
-  gap-x-1
-  font-semibold
-`;
-
-const DetailsP = tw.p`
-  flex 
-  cursor-pointer 
-  items-end 
-  text-blue-500 
-  hover:underline
-`;
-
-const OutermostDiv2 = tw.div`
-  flex
-  flex-col
-  items-end
-  space-y-4
-`;
-
-const CurrencyH4 = tw.h4`
-  text-xl
-  font-semibold
-  lg:text-2xl
-`;
