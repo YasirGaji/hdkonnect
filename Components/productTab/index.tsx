@@ -1,6 +1,6 @@
 import React from 'react'
 import { Tab } from '@headlessui/react'
-import Product from './product'
+import Product from '.././product'
 
 interface ProductProps {
   categories: Category[];
@@ -48,5 +48,3 @@ const ProductTab = ({ categories, products }: ProductProps) => {
 }
 
 export default ProductTab;
-
-
