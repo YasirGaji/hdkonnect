@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
-import Header from '../Components/Header';
+import Header from '../Components/header';
 import { ChevronDownIcon } from '@heroicons/react/solid';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';

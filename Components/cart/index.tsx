@@ -3,7 +3,7 @@ import { ShoppingBagIcon } from '@heroicons/react/outline'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { selectCartItems, selectCartTotal } from '../.././redux/cartSlice'
-import { CartDiv, IconSpan } from './styles/Cart'
+import { CartDiv, IconSpan } from './styles/cart'
 
 
 function Cart() {

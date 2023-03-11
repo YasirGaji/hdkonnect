@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from '../Components/Header'
+import Header from '../Components/header'
 import Landing from '../Components/Landing'
 import tw from 'twin.macro'
 import ProductTab from '../Components/ProductTab'
