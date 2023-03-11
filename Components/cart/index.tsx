@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { ShoppingBagIcon } from '@heroicons/react/outline'
+import { CartDiv, IconSpan } from './styles/cart'
 import Link from 'next/link'
 import { useSelector } from 'react-redux'
 import { selectCartItems, selectCartTotal } from '../.././redux/cartSlice'
-import { CartDiv, IconSpan } from './styles/cart'
+
 
 
 function Cart() {
